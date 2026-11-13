@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nox — Hoodies, crewnecks &amp; pants</title>
+  <meta name="description" content="Nox is a clothing brand. Browse the collection on the rail: zip-up hoodie, crewneck and wide-leg pants.">
+  <meta name="theme-color" content="#09090a">
+  <link rel="icon" type="image/png" href="/assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the collection</a>
+
+  <header class="site-header">
+    <nav class="header-nav" aria-label="Legal">
+      <a href="/refunds">Returns</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+    <a class="brand" href="/" aria-label="Nox, home">
+      <img src="/assets/brand/nox-mark.png" alt="" width="34" height="34">
+      <span>NOX</span>
+    </a>
+    <button type="button" class="bag-btn" id="open-bag" data-bag-label aria-label="Bag, 0 items" aria-haspopup="dialog">
+      <span>Bag</span><span class="bag-btn__n" data-bag-count aria-hidden="true" hidden>0</span>
+    </button>
+  </header>
+
+  <main id="main" class="stage">
+    <h1 class="sr-only">Nox collection</h1>
+
+    <div class="rail-wrap">
+      <div class="rail-bar" aria-hidden="true"></div>
+      <ul class="rail" id="rail" aria-label="Collection. Use the arrow keys or the previous and next buttons to move along the rail."></ul>
+    </div>
+    <noscript><p class="load-error">The Nox collection needs JavaScript to display. Please enable it and reload.</p></noscript>
+
+    <div class="caption">
+      <h2 class="caption__name" id="cap-name"></h2>
+      <p class="caption__meta" id="cap-meta"></p>
+      <button type="button" class="btn btn--solid" id="cap-btn" aria-haspopup="dialog">View product</button>
+    </div>
+
+    <div class="controls">
+      <button type="button" class="round" id="rail-prev" aria-label="Previous item"><span aria-hidden="true">&larr;</span></button>
+      <button type="button" class="round" id="rail-next" aria-label="Next item"><span aria-hidden="true">&rarr;</span></button>
+    </div>
+    <p class="hint">Drag, scroll or use the arrows</p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/terms">Terms &amp; Conditions</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/cookies">Cookie Policy</a>
+    <a href="/refunds">Refund Policy</a>
+    <button type="button" data-consent-open>Cookie settings</button>
+    <small>&copy; 2026 Nox</small>
+  </footer>
+
+  <!-- Product sheet -->
+  <dialog id="product" class="sheet-dialog" aria-labelledby="product-title">
+    <div class="sheet">
+      <button type="button" class="sheet__close" data-close aria-label="Close product"><span aria-hidden="true">&times;</span></button>
+      <div class="product" id="product-body"></div>
+    </div>
+  </dialog>
+
+  <!-- Size chart -->
+  <dialog id="size-dialog" class="modal" aria-labelledby="size-title">
+    <div class="modal__body">
+      <div class="modal__top"><h2 id="size-title">Size chart</h2><button type="button" class="round" data-close aria-label="Close size chart"><span aria-hidden="true">&times;</span></button></div>
+      <div id="size-body"></div>
+    </div>
+  </dialog>
+
+  <!-- Bag -->
+  <dialog id="bag" class="drawer" aria-labelledby="bag-title">
+    <div class="drawer__head"><h2 id="bag-title">Your bag</h2><button type="button" class="round" data-close aria-label="Close bag"><span aria-hidden="true">&times;</span></button></div>
+    <div class="drawer__body">
+      <p id="bag-empty" class="muted" hidden>Your bag is empty.</p>
+      <ul class="lines" id="bag-list"></ul>
+    </div>
+    <div class="drawer__foot" id="bag-foot" hidden>
+      <p class="sum"><span>Subtotal</span><span id="bag-sub"></span></p>
+      <p class="muted">Delivery cost is confirmed when we contact you about your order.</p>
+      <a class="btn btn--solid btn--block" href="/checkout">Checkout</a>
+    </div>
+  </dialog>
+
+  <div id="announce" class="sr-only" role="status" aria-live="polite"></div>
+
+  <script src="/js/consent.js" defer></script>
+  <script src="/js/garments.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "nox-store",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Nox clothing store (static site + one serverless order function)"
+}

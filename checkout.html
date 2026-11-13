@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Nox</title>
+  <meta name="description" content="Place your Nox order.">
+  <meta name="theme-color" content="#09090a">
+  <link rel="icon" type="image/png" href="/assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="header-nav" aria-label="Shop"><a href="/">Collection</a></nav>
+    <a class="brand" href="/" aria-label="Nox, home"><img src="/assets/brand/nox-mark.png" alt="" width="34" height="34"><span>NOX</span></a>
+    <a class="bag-btn" href="/checkout" data-bag-label aria-label="Bag, 0 items"><span>Bag</span><span class="bag-btn__n" data-bag-count aria-hidden="true" hidden>0</span></a>
+  </header>
+  <main id="main" class="page page--wide">
+
+    <h1>Checkout</h1>
+    <p class="lede">We'll contact you to confirm your order and delivery. Fields marked * are required.</p>
+
+    <div id="empty" class="panel" hidden>
+      <p>Your bag is empty.</p><a class="btn btn--solid" href="/">Browse the collection</a>
+    </div>
+
+    <div id="done" class="done" hidden tabindex="-1">
+      <h1>Thank you, order received</h1>
+      <p>Your order reference is <strong id="ref"></strong>.</p>
+      <p class="muted">We'll contact you shortly on the phone number you gave to confirm delivery cost and timing.</p>
+      <a class="btn btn--solid" href="/">Continue shopping</a>
+    </div>
+
+    <div class="checkout" id="co" hidden>
+      <form id="form" novalidate method="post" action="/api/order" aria-describedby="form-status">
+        <div id="err-summary" class="err-summary" role="alert" tabindex="-1" hidden>
+          <h2>Please fix the following</h2><ul id="err-list"></ul>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>Contact</legend>
+          <div class="field" data-field="name">
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" data-hint="">
+          
+          <p class="err" id="name-e" hidden></p>
+        </div>
+          <div class="field" data-field="phone">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" name="phone" required aria-required="true" autocomplete="tel" inputmode="tel" data-hint="phone-h">
+          <p class="hint-t" id="phone-h">So the courier and we can reach you.</p>
+          <p class="err" id="phone-e" hidden></p>
+        </div>
+          <div class="field" data-field="email">
+          <label for="email">Email <span class="opt-tag">(optional)</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" data-hint="email-h">
+          <p class="hint-t" id="email-h">Only if you want updates by email.</p>
+          <p class="err" id="email-e" hidden></p>
+        </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Delivery address</legend>
+          <div class="field" data-field="address">
+          <label for="address">Street address *</label>
+          <input type="text" id="address" name="address" required aria-required="true" autocomplete="street-address" data-hint="">
+          
+          <p class="err" id="address-e" hidden></p>
+        </div>
+          <div class="field" data-field="city">
+          <label for="city">City / area *</label>
+          <input type="text" id="city" name="city" required aria-required="true" autocomplete="address-level2" data-hint="">
+          
+          <p class="err" id="city-e" hidden></p>
+        </div>
+          <div class="field" data-field="notes">
+            <label for="notes">Delivery notes <span class="opt-tag">(optional)</span></label>
+            <textarea id="notes" name="notes" maxlength="300" data-hint=""></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Payment</legend>
+          <p class="notice"><mark class="todo">[Payment method, e.g. Cash on delivery.]</mark> No card details are collected on this website.</p>
+        </fieldset>
+
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="field" data-field="consent">
+          <div class="check">
+            <input type="checkbox" id="consent" name="consent" required aria-required="true">
+            <label for="consent">I have read and agree to the <a href="/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="/refunds" target="_blank" rel="noopener">Refund Policy</a>, and I agree that Nox uses my details to process and deliver this order as described in the <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>. *</label>
+          </div>
+          <p class="err" id="consent-e" hidden></p>
+        </div>
+
+        <button type="submit" class="btn btn--solid btn--block" id="submit">Place order</button>
+        <p id="form-status" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="panel summary" aria-labelledby="sum-h">
+        <h2 id="sum-h">Order summary</h2>
+        <div id="sum-lines"></div>
+        <p class="sum"><span>Subtotal</span><span id="sum-total"></span></p>
+        <p class="muted">Delivery cost is confirmed when we contact you.</p>
+        <a href="/" class="btn btn--link">Edit bag</a>
+      </aside>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <a href="/terms">Terms &amp; Conditions</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/cookies">Cookie Policy</a>
+    <a href="/refunds">Refund Policy</a>
+    <button type="button" data-consent-open>Cookie settings</button>
+    <small>&copy; 2026 Nox</small>
+  </footer>
+  <script src="/js/consent.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+  <script src="/js/checkout.js" defer></script>
+</body>
+</html>

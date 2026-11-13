@@ -1,0 +1,135 @@
+{
+  "_readme": "Edit this file to change products, prices, colours, photos and sizes. Sizes: add or remove entries in each product's \"sizes\" array. Size chart: fill the numbers in \"sizeCharts\" (leave a value as \"\" to show a dash). Prices are whole numbers in the currency below.",
+  "currency": "EGP",
+  "products": [
+    {
+      "id": "zipup-hoodie",
+      "type": "zipup",
+      "name": "Zip-Up Hoodie",
+      "price": 590,
+      "sizeChart": "tops",
+      "sizes": ["S", "M", "L", "XL"],
+      "description": "Oversized zip-up hoodie with drop shoulders, a full-length zip, a kangaroo pocket and a tonal embroidered Nox mark on the hood.",
+      "details": [
+        "Oversized fit",
+        "Full-length zip",
+        "Kangaroo pocket",
+        "Embroidered Nox mark on the hood"
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#161616",
+          "images": [
+            { "src": "assets/products/zipup-black-front.jpg", "alt": "Black Nox zip-up hoodie worn open over a white ribbed tank top" },
+            { "src": "assets/products/zipup-black-back.jpg", "alt": "Back of the black Nox zip-up hoodie with the hood up and the silver embroidered Nox mark" }
+          ]
+        },
+        {
+          "id": "sky-blue",
+          "name": "Sky Blue",
+          "hex": "#9ebde6",
+          "images": [
+            { "src": "assets/products/zipup-blue-front.jpg", "alt": "Sky blue Nox zip-up hoodie worn open with the hood up" },
+            { "src": "assets/products/zipup-blue-back.jpg", "alt": "Back of the sky blue Nox zip-up hoodie with the tonal embroidered Nox mark on the hood" }
+          ]
+        },
+        {
+          "id": "stone",
+          "name": "Stone",
+          "hex": "#d3cec4",
+          "images": [
+            { "src": "assets/products/zipup-stone-front.jpg", "alt": "Stone coloured Nox zip-up hoodie worn open with the hood down" }
+          ]
+        },
+        {
+          "id": "burgundy",
+          "name": "Burgundy",
+          "hex": "#5b1622",
+          "images": [
+            { "src": "assets/products/zipup-maroon-back.jpg", "alt": "Back of the burgundy Nox zip-up hoodie with the tonal embroidered Nox mark on the hood" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crewneck",
+      "type": "crewneck",
+      "name": "Crewneck",
+      "price": 490,
+      "sizeChart": "tops",
+      "sizes": ["S", "M", "L", "XL"],
+      "description": "Oversized crewneck sweatshirt with drop shoulders and ribbed neck, cuffs and hem.",
+      "details": [
+        "Oversized fit",
+        "Dropped shoulders",
+        "Ribbed neck, cuffs and hem"
+      ],
+      "colors": [
+        {
+          "id": "burgundy",
+          "name": "Burgundy",
+          "hex": "#5b1622",
+          "images": [
+            { "src": "assets/products/crewneck-maroon-front.jpg", "alt": "Burgundy Nox crewneck sweatshirt worn with grey sweatpants" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pants",
+      "type": "pants",
+      "name": "Wide-Leg Pants",
+      "price": 610,
+      "sizeChart": "bottoms",
+      "sizes": ["S", "M", "L", "XL"],
+      "description": "Relaxed wide-leg sweatpants with an elasticated drawstring waist and side pockets.",
+      "details": [
+        "Wide-leg fit",
+        "Elasticated drawstring waist",
+        "Side pockets"
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#161616",
+          "images": [
+            { "src": "assets/products/pants-black.jpg", "alt": "Black wide-leg pants with white drawstrings, worn with white trainers" }
+          ]
+        },
+        {
+          "id": "heather-grey",
+          "name": "Heather Grey",
+          "hex": "#a9abb0",
+          "images": [
+            { "src": "assets/products/pants-grey.jpg", "alt": "Heather grey wide-leg pants with drawstrings, worn with white trainers" }
+          ]
+        }
+      ]
+    }
+  ],
+  "sizeCharts": {
+    "tops": {
+      "unit": "cm",
+      "columns": ["Chest", "Length", "Sleeve"],
+      "rows": {
+        "S": ["", "", ""],
+        "M": ["", "", ""],
+        "L": ["", "", ""],
+        "XL": ["", "", ""]
+      }
+    },
+    "bottoms": {
+      "unit": "cm",
+      "columns": ["Waist", "Length", "Inseam"],
+      "rows": {
+        "S": ["", "", ""],
+        "M": ["", "", ""],
+        "L": ["", "", ""],
+        "XL": ["", "", ""]
+      }
+    }
+  }
+}
